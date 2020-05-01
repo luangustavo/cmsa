@@ -1,0 +1,4 @@
+﻿  cmsa.cpp
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(64,21): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(92,13): warning C4244: '=': conversão de 'double' para 'int', possível perda de dados
+  cmsa.vcxproj -> C:\Users\Luan\source\repos\cmsa\Debug\cmsa.exe
