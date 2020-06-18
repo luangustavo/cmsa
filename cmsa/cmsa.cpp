@@ -35,7 +35,7 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 	if (points.size() > 0 && points.size() <= 3) {
 
-		std::cout << "2 - " << points.size() << std::endl;
+		//std::cout << "2 - " << points.size() << std::endl;
 
 		if (makeSmallestEnclosingCircle(points).c.x != NULL) {
 
@@ -59,7 +59,7 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			Se no quadrante não houver pontos retorna.
 		*/
 
-		std::cout << x_max << " - " << metade_x << " - " << metade_y << std::endl;
+		//std::cout << x_max << " - " << metade_x << " - " << metade_y << std::endl;
 
 		for (int i = 0; i < points.size(); i++) {
 
@@ -159,8 +159,8 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 		if (quad1.size() > 0) {
 
-			std::cout << "1 - " << quad1.size() << " - " << aux_max_x_1 << std::endl;
-			std::cout << quad1[0].x << std::endl;
+			//std::cout << "1 - " << quad1.size() << " - " << aux_max_x_1 << std::endl;
+			//std::cout << quad1[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad1).c.x != NULL) {
 				std::cout << makeSmallestEnclosingCircle(quad1).c.x << std::endl;
@@ -171,15 +171,15 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			}
 
 			welz(quad1, aux_max_x_1, aux_max_y_1, aux_min_x_1, aux_min_y_1);
-			std::cout << "teste1" << std::endl;
+			//std::cout << "teste1" << std::endl;
 
 
 		}
 
 		if (quad2.size() > 0) {
 
-			std::cout << "2 - " << quad2.size() << " - " << aux_min_x_2 << std::endl;
-			std::cout << quad2[0].x << std::endl;
+			//std::cout << "2 - " << quad2.size() << " - " << aux_min_x_2 << std::endl;
+			//std::cout << quad2[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad2).c.x != NULL) {
 
@@ -190,14 +190,14 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			}
 
 			welz(quad2, aux_max_x_2, aux_max_y_2, aux_min_x_2, aux_min_y_2);
-			std::cout << "teste2" << std::endl;
+			//std::cout << "teste2" << std::endl;
 
 		}
 
 		if (quad3.size() > 0) {
 
-			std::cout << "3 - " << quad3.size() << std::endl;
-			std::cout << quad3[0].x << std::endl;
+			//std::cout << "3 - " << quad3.size() << std::endl;
+			//std::cout << quad3[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad3).c.x != NULL) {
 
@@ -208,13 +208,13 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			}
 
 			welz(quad3, aux_max_x_3, aux_max_y_3, aux_min_x_3, aux_min_y_3);
-			std::cout << "teste3" << std::endl;
+			//std::cout << "teste3" << std::endl;
 		}
 
 		if (quad4.size() > 0) {
 
-			std::cout << "4 - " << quad4.size() << std::endl;
-			std::cout << quad4[0].x << std::endl;
+			//std::cout << "4 - " << quad4.size() << std::endl;
+			//std::cout << quad4[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad4).c.x != NULL) {
 
@@ -224,12 +224,12 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 			}
 			welz(quad4, aux_max_x_4, aux_max_y_4, aux_min_x_4, aux_min_y_4);
-			std::cout << "teste4" << std::endl;
+			//std::cout << "teste4" << std::endl;
 		}
 
 	}
 	else {
-		std::cout << "teste" << std::endl;
+		//std::cout << "teste" << std::endl;
 	}
 	return 0;
 	
