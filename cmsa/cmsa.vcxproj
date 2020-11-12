@@ -159,6 +159,7 @@
     <ClInclude Include="SmallestEnclosingCircle.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="entrada_antenas.txt" />
     <Text Include="entrada_pontos.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

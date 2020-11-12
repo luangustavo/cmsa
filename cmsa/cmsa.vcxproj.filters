@@ -34,5 +34,8 @@
     <Text Include="entrada_pontos.txt">
       <Filter>Arquivos de Origem</Filter>
     </Text>
+    <Text Include="entrada_antenas.txt">
+      <Filter>Arquivos de Origem</Filter>
+    </Text>
   </ItemGroup>
 </Project>
