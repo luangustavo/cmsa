@@ -11,6 +11,7 @@ using namespace std;
 using std::size_t;
 using std::vector;
 
+int qtd_discos = 0;
 
 // Random number generation global variables
 static std::default_random_engine randGen((std::random_device())());
@@ -37,9 +38,9 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 		if (makeSmallestEnclosingCircle(points).c.x != NULL) {
 
-			std::cout << makeSmallestEnclosingCircle(points).c.x << std::endl;
-			std::cout << makeSmallestEnclosingCircle(points).c.y << std::endl;
-			std::cout << makeSmallestEnclosingCircle(points).r << std::endl;
+			std::cout << "X: " << makeSmallestEnclosingCircle(points).c.x 
+				<< ", Y: " << makeSmallestEnclosingCircle(points).c.y 
+				<< ", R: "<< makeSmallestEnclosingCircle(points).r << std::endl;
 
 		}
 	}
@@ -85,10 +86,14 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 		if (quad1.size() > 0) {
 
 			if (makeSmallestEnclosingCircle(quad1).c.x != NULL) {
+				/*
 				std::cout << makeSmallestEnclosingCircle(quad1).c.x << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad1).c.y << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad1).r << std::endl;
-
+				*/
+				std::cout << "X: " << makeSmallestEnclosingCircle(quad1).c.x
+					<< ", Y: " << makeSmallestEnclosingCircle(quad1).c.y
+					<< ", R: " << makeSmallestEnclosingCircle(quad1).r << std::endl;
 
 			}
 
@@ -101,9 +106,15 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 			if (makeSmallestEnclosingCircle(quad2).c.x != NULL) {
 
+				/*
 				std::cout << makeSmallestEnclosingCircle(quad2).c.x << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad2).c.y << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad2).r << std::endl;
+				*/
+
+				std::cout << "X: " << makeSmallestEnclosingCircle(quad2).c.x
+					<< ", Y: " << makeSmallestEnclosingCircle(quad2).c.y
+					<< ", R: " << makeSmallestEnclosingCircle(quad2).r << std::endl;
 
 			}
 
@@ -115,9 +126,15 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 			if (makeSmallestEnclosingCircle(quad3).c.x != NULL) {
 
+				/*
 				std::cout << makeSmallestEnclosingCircle(quad3).c.x << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad3).c.y << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad3).r << std::endl;
+				*/
+
+				std::cout << "X: " << makeSmallestEnclosingCircle(quad3).c.x
+					<< ", Y: " << makeSmallestEnclosingCircle(quad3).c.y
+					<< ", R: " << makeSmallestEnclosingCircle(quad3).r << std::endl;
 
 			}
 
@@ -128,9 +145,15 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 			if (makeSmallestEnclosingCircle(quad4).c.x != NULL) {
 
+				/*
 				std::cout << makeSmallestEnclosingCircle(quad4).c.x << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad4).c.y << std::endl;
 				std::cout << makeSmallestEnclosingCircle(quad4).r << std::endl;
+				*/
+
+				std::cout << "X: " << makeSmallestEnclosingCircle(quad4).c.x
+					<< ", Y: " << makeSmallestEnclosingCircle(quad4).c.y
+					<< ", R: " << makeSmallestEnclosingCircle(quad4).r << std::endl;
 
 			}
 			welz(quad4, aux_max_x_4, aux_max_y_4, aux_min_x_4, aux_min_y_4);
