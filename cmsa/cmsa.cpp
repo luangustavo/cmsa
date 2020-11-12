@@ -21,6 +21,7 @@ static const double EPSILON = 1e-12;
 
 int welz(vector<Point> points, double x_max, double y_max, double x_min, double y_min) {
 
+	//Valores proporcionais
 	double metade_x = (x_max - x_min) / 2;
 	double metade_y = (y_max - y_min) / 2;
 
@@ -31,11 +32,8 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 	double aux_min_y_1 = y_min + metade_y, aux_min_y_2 = y_min + metade_y, aux_min_y_3 = y_min, aux_min_y_4 = y_min;
 
 
-	int teste = 0;
-
+	//Se possui no max 3 pontos no total
 	if (points.size() > 0 && points.size() <= 3) {
-
-		//std::cout << "2 - " << points.size() << std::endl;
 
 		if (makeSmallestEnclosingCircle(points).c.x != NULL) {
 
@@ -59,108 +57,32 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			Se no quadrante não houver pontos retorna.
 		*/
 
-		//std::cout << x_max << " - " << metade_x << " - " << metade_y << std::endl;
-
 		for (int i = 0; i < points.size(); i++) {
-
-			teste = 1;
 
 			if ((points[i].x >= x_min && points[i].x <= x_min + metade_x) && (points[i].y >= y_min + metade_y && points[i].y <= y_max)) {
 
-				teste = 2;
-
 				quad1.insert(quad1.end(), points[i]);
 
-				/*if (points[i].x > aux_max_x_1) {
-					aux_max_x_1 = points[i].x;
-				}
-
-				if (points[i].y > aux_max_y_1) {
-					aux_max_y_1 = points[i].y;
-				}
-
-				if (points[i].x < aux_min_x_1) {
-					aux_min_x_1 = points[i].x;
-				}
-
-				if (points[i].y < aux_min_y_1) {
-					aux_min_y_1 = points[i].y;
-				}*/
 			}
 			else if ((points[i].x >= x_min + metade_x && points[i].x <= x_max) && (points[i].y >= y_min + metade_y && points[i].y <= y_max)) {
 
-				teste = aux_min_x_2;
-
 				quad2.insert(quad2.end(), points[i]);
-
-				/*if (points[i].x > aux_max_x_2) {
-					aux_max_x_2 = points[i].x;
-				}
-
-				if (points[i].y > aux_max_y_2) {
-					aux_max_y_2 = points[i].y;
-				}
-
-				if (points[i].x < aux_min_x_2) {
-					aux_min_x_2 = points[i].x;
-					teste = 3;
-				}
-
-				if (points[i].y < aux_min_y_2) {
-					aux_min_y_2 = points[i].y;
-				}*/
+				
 			}
 			else if ((points[i].x >= x_min && points[i].x <= x_min + metade_x) && (points[i].y >= y_min && points[i].y <= y_min + metade_y)) {
 
-				teste = 2;
-
 				quad3.insert(quad3.end(), points[i]);
-
-				/*if (points[i].x > aux_max_x_3) {
-					aux_max_x_3 = points[i].x;
-				}
-
-				if (points[i].y > aux_max_y_3) {
-					aux_max_y_3 = points[i].y;
-				}
-
-				if (points[i].x < aux_min_x_3) {
-					aux_min_x_3 = points[i].x;
-				}
-
-				if (points[i].y < aux_min_y_3) {
-					aux_min_y_3 = points[i].y;
-				}*/
+				
 			}
 			else if ((points[i].x >= x_min + metade_x && points[i].x <= x_max) && (points[i].y >= y_min && points[i].y <= y_min + metade_y)) {
 
-				teste = 2;
-
 				quad4.insert(quad4.end(), points[i]);
 
-				/*if (points[i].x > aux_max_x_4) {
-					aux_max_x_4 = points[i].x;
-				}
-
-				if (points[i].y > aux_max_y_4) {
-					aux_max_y_4 = points[i].y;
-				}
-
-				if (points[i].x < aux_min_x_4) {
-					aux_min_x_4 = points[i].x;
-				}
-
-				if (points[i].y < aux_min_y_4) {
-					aux_min_y_4 = points[i].y;
-				}*/
 			}
 
 		}
 
 		if (quad1.size() > 0) {
-
-			//std::cout << "1 - " << quad1.size() << " - " << aux_max_x_1 << std::endl;
-			//std::cout << quad1[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad1).c.x != NULL) {
 				std::cout << makeSmallestEnclosingCircle(quad1).c.x << std::endl;
@@ -171,15 +93,11 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			}
 
 			welz(quad1, aux_max_x_1, aux_max_y_1, aux_min_x_1, aux_min_y_1);
-			//std::cout << "teste1" << std::endl;
 
 
 		}
 
 		if (quad2.size() > 0) {
-
-			//std::cout << "2 - " << quad2.size() << " - " << aux_min_x_2 << std::endl;
-			//std::cout << quad2[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad2).c.x != NULL) {
 
@@ -190,14 +108,10 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			}
 
 			welz(quad2, aux_max_x_2, aux_max_y_2, aux_min_x_2, aux_min_y_2);
-			//std::cout << "teste2" << std::endl;
 
 		}
 
 		if (quad3.size() > 0) {
-
-			//std::cout << "3 - " << quad3.size() << std::endl;
-			//std::cout << quad3[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad3).c.x != NULL) {
 
@@ -208,13 +122,9 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			}
 
 			welz(quad3, aux_max_x_3, aux_max_y_3, aux_min_x_3, aux_min_y_3);
-			//std::cout << "teste3" << std::endl;
 		}
 
 		if (quad4.size() > 0) {
-
-			//std::cout << "4 - " << quad4.size() << std::endl;
-			//std::cout << quad4[0].x << std::endl;
 
 			if (makeSmallestEnclosingCircle(quad4).c.x != NULL) {
 
@@ -224,22 +134,15 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 
 			}
 			welz(quad4, aux_max_x_4, aux_max_y_4, aux_min_x_4, aux_min_y_4);
-			//std::cout << "teste4" << std::endl;
 		}
 
 	}
-	else {
-		//std::cout << "teste" << std::endl;
-	}
+	
 	return 0;
 	
 }
 
-
-
 int main() {
-
-
 
 	//double memory = 1000.0;
 	vector<double> Px;
@@ -256,7 +159,6 @@ int main() {
 	vector<Point> points;
 
 	Point point;
-
 
 	//Lendo o arquivo de pontos
 	ifstream filePontos("entrada_pontos.txt");
@@ -286,8 +188,6 @@ int main() {
 				max_y = stof(y_txt);
 			}
 			*/
-
-
 			
 			x_txt = line.substr(0, line.find(","));
 			//Px.insert(Px.end(),stof(x_txt));
@@ -313,7 +213,7 @@ int main() {
 
 	else cout << "Unable to open file";
 
-	/*
+	
 	//Lendo o arquivo de antenas
 	ifstream fileAntenas("entrada_antenas.txt");
 	if (fileAntenas.is_open())
@@ -335,11 +235,8 @@ int main() {
 	}
 
 	else cout << "Unable to open file";
-	*/
 
-
-
-	/*Welz*/
+	//Welz
 	welz(points, max_x, max_y, 0, 0);
 	
 	return EXIT_SUCCESS;
