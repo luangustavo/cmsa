@@ -265,6 +265,7 @@ int main() {
 		while (!filePontos.eof())
 		{
 			getline(filePontos, line);
+
 			/*
 				Monaliza
 
@@ -313,7 +314,7 @@ int main() {
 	else cout << "Unable to open file";
 
 	/*
-	//Lendo o arquivo de pontos
+	//Lendo o arquivo de antenas
 	ifstream fileAntenas("entrada_antenas.txt");
 	if (fileAntenas.is_open())
 	{
