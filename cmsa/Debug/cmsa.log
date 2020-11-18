@@ -1,3 +1,8 @@
 ﻿  cmsa.cpp
-C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(60,21): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(52,20): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(89,22): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(129,22): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(167,22): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(204,22): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\Luan\source\repos\cmsa\cmsa\cmsa.cpp(355,20): warning C4018: '<': incompatibilidade de signed/unsigned
   cmsa.vcxproj -> C:\Users\Luan\source\repos\cmsa\Debug\cmsa.exe

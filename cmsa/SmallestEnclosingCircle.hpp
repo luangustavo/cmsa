@@ -23,6 +23,8 @@
 
 #include <vector>
 
+using std::vector;
+
 
 struct Point final {
 
@@ -36,6 +38,30 @@ public: double distance(const Point& p) const;
 
 	  // Signed area / determinant thing
 public: double cross(const Point& p) const;
+
+};
+
+struct Tupla final {
+
+public: int id;
+public: int disco;
+public: vector<Point> points;
+
+};
+
+struct Rn final {
+
+public: int id;
+public: vector<int> tuplas;
+
+};
+
+struct Disco final {
+
+public: int id;
+public: double raio;
+public: double custo;
+public: vector<int> R;
 
 };
 
