@@ -25,7 +25,8 @@ Tupla d;
 vector<Disco> discos;
 
 int id_aux_d = 0;
-vector<vector<int>> C;
+
+vector <vector <int>> C;
 
 int welz(vector<Point> points, double x_max, double y_max, double x_min, double y_min) {
 
@@ -405,7 +406,7 @@ int main() {
 	}
 	*/
 
-	Exato();
+	Exato(points, discos, D_line, C);
 
 	return EXIT_SUCCESS;
 

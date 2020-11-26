@@ -22,64 +22,13 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 		//vector<double> Py;
 		//vector<double> custos;
 		//vector<double> raios;
-
+		
+		/*
 		float max_x, max_y;
 		max_x = 0;
 		max_y = 0;
-
+		
 		string line, x_txt, y_txt, custos_txt, raios_txt;
-
-		/*
-		//Lendo o arquivo de pontos
-		ifstream filePontos("entrada_pontos.txt");
-		if (filePontos.is_open())
-		{
-			while (!filePontos.eof())
-			{
-				getline(filePontos, line);
-
-				x_txt = line.substr(0, line.find(","));
-				Px.insert(Px.end(), stof(x_txt));
-
-				if (max_x < stof(x_txt)) {
-					max_x = stof(x_txt);
-				}
-
-				y_txt = line.substr(x_txt.length() + 1, line.length());
-				Py.insert(Py.end(), stof(y_txt));
-
-				if (max_y < stof(y_txt)) {
-					max_y = stof(y_txt);
-				}
-			}
-			filePontos.close();
-		}
-
-		else cout << "Unable to open file";
-
-		//Lendo o arquivo de antenas
-		ifstream fileAntenas("entrada_antenas.txt");
-		if (fileAntenas.is_open())
-		{
-			while (!fileAntenas.eof())
-			{
-				getline(fileAntenas, line);
-
-				raios_txt = line.substr(0, line.find(","));
-
-				raios.insert(raios.end(), stof(raios_txt));
-
-				custos_txt = line.substr(raios_txt.length() + 1, line.length());
-
-				custos.insert(custos.end(), stof(custos_txt));
-
-			}
-			fileAntenas.close();
-		}
-
-		else cout << "Unable to open file";
-
-		*/
 
 		for (int i = 0; i < points.size(); i++) {
 			if (max_x < points[i].x) {
@@ -89,13 +38,14 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 				max_y = points[i].y;
 			}
 		}
+		*/
 
 		int n_ant = discos.size(); // num de antenas
 		int n_pon = points.size(); // num de pontos
 		int n_tuplas = tuplas.size(); // num de tuplas
 		//int n_c = C[points[].id].size();
 
-
+		std::cout << points.size() << " - " << n_pon << " - " << C.size() << std::endl;
 		// create model
 
 		IloModel antena(env, "Problema da Antenas");
@@ -107,15 +57,13 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 		//cplex.setParam(IloCplex::TreLim, memory);
 
 		// Criando as variáveis binárias
-		IloIntVarArray z(env, n_tuplas, 0, 1);
-		IloNumVarArray x(env, n_ant, 0, max_x);
-		IloNumVarArray y(env, n_ant, 0, max_y);
-
+		IloIntVarArray x(env, n_tuplas, 0, 1);
+		
+		/*
 		IloArray<IloIntVarArray> p(env, n_ant);
 		for (int i = 0;i < n_ant;i++)
 			p[i] = IloIntVarArray(env, n_pon, 0, 1); // Criação variáveis p[i][j]
-
-		/*
+			
 		// Função Objetivo
 		IloExpr obj(env);
 		for (int i = 0; i < n_ant; i++)
@@ -128,7 +76,7 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 		IloExpr obj(env);
 		for (int j = 0; j < n_tuplas; j++)
 			//obj += custos[i] * z[i];
-			obj += discos[tuplas[j].disco].custo * z[j];
+			obj += discos[tuplas[j].disco].custo * x[j];
 		antena.add(IloMinimize(env, obj));
 
 		/*
@@ -142,24 +90,26 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 
 		*/
 
-		// Cada ponto deve ser atendido por uma antena
-		for (int j = 0;j < n_c;j++)
+		
+		// Cada ponto deve ser atendido por uma tupla
+		for (int i = 0; i < n_pon; i++)
 		{
-			IloExpr obj(env);
-			for (int i = 0; i < n_ant; i++)
-				obj += p[i][j];
-			antena.add(obj >= 1);
+			IloExpr somatorio(env);
+			for (int j = 0; j < C[i].size(); j++)
+				somatorio += x[C[i][j]];
+			antena.add(somatorio >= 1);
 		}
 
-		// Cada ponto deve ser atendido por uma antena
-		for (int j = 0;j < n_pon;j++)
+		// Cada disco deve ser usado uma unica vez
+		for (int d = 0; d < discos.size(); d++)
 		{
-			IloExpr obj(env);
-			for (int i = 0; i < n_ant; i++)
-				obj += p[i][j];
-			antena.add(obj >= 1);
+			IloExpr somatorio(env);
+			for (int j = 0; j < discos[d].R.size(); j++)
+				somatorio += x[discos[d].R[j]];
+			antena.add(somatorio <= 1);
 		}
 
+		/*
 		// Se um ponto j é coberto pela antena i então a antena i está sendo utilizada
 		for (int i = 0; i < n_ant; i++)
 			for (int j = 0;j < n_pon;j++)
@@ -167,14 +117,16 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 				antena.add(p[i][j] <= z[i]);
 			}
 
-
+		*/
+		
 		if (cplex.solve())
 			env.out() << "Valor Ótimo "
 			<< cplex.getObjValue() << endl;
 
-		IloNumArray sol(env, n_ant);
-		cplex.getValues(sol, z);
+		IloNumArray sol(env, n_tuplas);
+		cplex.getValues(sol, x);
 
+		/*
 		for (int i = 0; i < n_ant; i++)
 		{
 			IloNum sol_x = cplex.getValue(x[i]);
@@ -191,6 +143,7 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 				}
 			}
 		}
+		*/
 
 	}
 	catch (const IloException & e)
