@@ -11,6 +11,9 @@ ILOSTLBEGIN
 
 static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> tuplas, vector<vector<int>> C)
 {
+
+	std::cout << points.size() << " - " << " - " << C.size() << std::endl;
+	
 	IloEnv env;
 
 	try
@@ -45,7 +48,7 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 		int n_tuplas = tuplas.size(); // num de tuplas
 		//int n_c = C[points[].id].size();
 
-		std::cout << points.size() << " - " << n_pon << " - " << C.size() << std::endl;
+		
 		// create model
 
 		IloModel antena(env, "Problema da Antenas");
