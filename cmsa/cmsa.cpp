@@ -140,7 +140,7 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			for (int i = 0; i < discos.size(); i++) {
 				if (discos[i].raio >= smallest.r) {
 
-					d.id = id_aux_d + 1;
+					d.id = id_aux_d;
 					d.disco = i;
 					d.points = quad2;
 
@@ -184,7 +184,7 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			for (int i = 0; i < discos.size(); i++) {
 				if (discos[i].raio >= smallest.r) {
 
-					d.id = id_aux_d + 1;
+					d.id = id_aux_d;
 					d.disco = i;
 					d.points = quad3;
 
@@ -227,7 +227,7 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			for (int i = 0; i < discos.size(); i++) {
 				if (discos[i].raio >= smallest.r) {
 
-					d.id = id_aux_d + 1;
+					d.id = id_aux_d;
 					d.disco = i;
 					d.points = quad4;
 
