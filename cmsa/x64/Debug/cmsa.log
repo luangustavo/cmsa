@@ -1,0 +1,62 @@
+﻿  cmsa.cpp
+  exato.cpp
+C:\Users\Luan\source\repos\cmsa\cmsa\exato.cpp(79,28): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+  SmallestEnclosingCircle.cpp
+  SmallestEnclosingCircleTest.cpp
+  Gerando Código...
+C:\Users\Luan\source\repos\cmsa\cmsa\exato.cpp(80,24): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+ilocplex.lib(ilocplex.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilocpxcallback.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilogoals.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilocpxsoln.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilocplexreader.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilocplexsolnpool.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(iloannotation.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilocpxindexmanager.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(iloextrmgr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(iloexpr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilodeflpextr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilologicextr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilocolextr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(cpxcache.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilomutex.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilomipstart.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+ilocplex.lib(ilolpextr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilotypes.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloenv.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloallocator.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloalg.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloexpression.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloconstraint.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloextractable.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(evalexpand.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosolution.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(evaluator.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloiterator.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilohash.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosimplecollection.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilorandom.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilothread.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloset.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloanyexpr.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilostimei.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilossol.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilocollectionstruct.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilocollection.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilocollectioniterator.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilomap.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilocollectionoperator.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosbasic.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloparami.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloskiplist.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilonumfunci.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(evalkernel.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosdisplayi.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(iloserror.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilossequencei.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosstructi.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilointervalsi.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosatomi.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+concert.lib(ilosmodel.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no exato.obj
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
+C:\Users\Luan\source\repos\cmsa\x64\Debug\cmsa.exe : fatal error LNK1319: 53 não correspondências detectadas

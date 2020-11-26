@@ -6,6 +6,7 @@
 #include "SmallestEnclosingCircle.hpp"
 #include <string>
 #include <fstream>
+#include "exato.cpp"
 using namespace std;
 
 using std::size_t;
@@ -24,6 +25,7 @@ Tupla d;
 vector<Disco> discos;
 
 int id_aux_d = 0;
+vector<vector<int>> C;
 
 int welz(vector<Point> points, double x_max, double y_max, double x_min, double y_min) {
 
@@ -59,12 +61,12 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 		else if ((points[i].x >= x_min + metade_x && points[i].x <= x_max) && (points[i].y >= y_min + metade_y && points[i].y <= y_max)) {
 
 			quad2.insert(quad2.end(), points[i]);
-				
+
 		}
 		else if ((points[i].x >= x_min && points[i].x <= x_min + metade_x) && (points[i].y >= y_min && points[i].y <= y_min + metade_y)) {
 
 			quad3.insert(quad3.end(), points[i]);
-				
+
 		}
 		else if ((points[i].x >= x_min + metade_x && points[i].x <= x_max) && (points[i].y >= y_min && points[i].y <= y_min + metade_y)) {
 
@@ -89,9 +91,17 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 			for (int i = 0; i < discos.size(); i++) {
 				if (discos[i].raio >= smallest.r) {
 
-					d.id = id_aux_d+1;
+					//comecar do id 0
+					//d.id = id_aux_d+1;
+					d.id = id_aux_d;
 					d.disco = i;
 					d.points = quad1;
+
+					for (int j = 0; j < quad1.size(); j++) {
+
+						//C eh um vetor de vetores
+						C[quad1[j].id].push_back(d.id);
+					}
 
 					D_line.insert(D_line.end(), d);
 
@@ -133,6 +143,12 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 					d.disco = i;
 					d.points = quad2;
 
+					for (int j = 0; j < quad2.size(); j++) {
+
+						//C eh um vetor de vetores
+						C[quad2[j].id].push_back(d.id);
+					}
+
 					D_line.insert(D_line.end(), d);
 
 					discos[i].R.insert(discos[i].R.end(), d.id);
@@ -171,6 +187,12 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 					d.disco = i;
 					d.points = quad3;
 
+					for (int j = 0; j < quad3.size(); j++) {
+
+						//C eh um vetor de vetores
+						C[quad3[j].id].push_back(d.id);
+					}
+
 					D_line.insert(D_line.end(), d);
 
 					discos[i].R.insert(discos[i].R.end(), d.id);
@@ -208,6 +230,12 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 					d.disco = i;
 					d.points = quad4;
 
+					for (int j = 0; j < quad4.size(); j++) {
+
+						//C eh um vetor de vetores
+						C[quad4[j].id].push_back(d.id);
+					}
+
 					D_line.insert(D_line.end(), d);
 
 					discos[i].R.insert(discos[i].R.end(), d.id);
@@ -227,7 +255,7 @@ int welz(vector<Point> points, double x_max, double y_max, double x_min, double 
 	}
 
 	return 0;
-	
+
 }
 
 int main() {
@@ -235,7 +263,7 @@ int main() {
 	//double memory = 1000.0;
 	//vector<double> Px;
 	//vector<double> Py;
-	
+
 	Disco disco;
 
 	int id_aux = 0;
@@ -280,7 +308,7 @@ int main() {
 				max_y = stof(y_txt);
 			}
 			*/
-			
+
 			x_txt = line.substr(0, line.find(","));
 			//Px.insert(Px.end(),stof(x_txt));
 
@@ -288,7 +316,7 @@ int main() {
 				max_x = stof(x_txt);
 			}
 
-			y_txt = line.substr(x_txt.length()+1,line.length());
+			y_txt = line.substr(x_txt.length() + 1, line.length());
 			//Py.insert(Py.end(), stof(y_txt));
 
 			if (max_y < stof(y_txt)) {
@@ -297,15 +325,19 @@ int main() {
 
 			point.x = stof(x_txt);
 			point.y = stof(y_txt);
-			
+			point.id = id_aux;
+
 			points.insert(points.end(), point);
+			id_aux++;
 		}
 		filePontos.close();
 	}
 
 	else cout << "Unable to open file";
 
-	
+	C.resize(id_aux);
+
+	id_aux = 0;
 	//Lendo o arquivo de antenas
 	ifstream fileDiscos("entrada_antenas.txt");
 	if (fileDiscos.is_open())
@@ -350,16 +382,31 @@ int main() {
 
 	//Welz
 	welz(points, max_x, max_y, 0, 0);
-	
+
+	/*
 	std::cout << "R1: (";
 	for (int i = 0; i < discos[0].R.size(); i++)
 	{
 		std::cout << discos[0].R[i] << ", ";
-			
+
 	}
 	std::cout << ")" << std::endl;
+	*/
+
+	/*
+	for (int i = 0; i < C.size(); i++) {
+		std::cout << i << "{";
+		for (int j = 0; j < C[i].size(); j++) {
+
+			//C eh um vetor de vetores
+			std::cout << C[i][j] << ", ";
+		}
+		std::cout << "}" << std::endl;
+	}
+	*/
+
+	Exato();
+
 	return EXIT_SUCCESS;
-	
+
 }
-
-

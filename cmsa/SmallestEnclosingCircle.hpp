@@ -30,6 +30,7 @@ struct Point final {
 
 public: double x;
 public: double y;
+public: int id;
 
 
 public: Point subtract(const Point& p) const;
@@ -65,6 +66,14 @@ public: vector<int> R;
 
 };
 
+/*
+struct C final {
+
+public: int id;
+public: double raio;
+
+};
+*/
 
 struct Circle final {
 
