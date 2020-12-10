@@ -47,6 +47,7 @@ struct Tupla final {
 public: int id;
 public: int disco;
 public: vector<Point> points;
+public: Point pos;
 
 };
 

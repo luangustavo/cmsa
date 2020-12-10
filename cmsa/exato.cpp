@@ -9,10 +9,10 @@ using namespace std;
 
 ILOSTLBEGIN
 
-static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> tuplas, vector<vector<int>> C)
+static double Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> tuplas, vector<vector<int>> C)
 {
-
-	std::cout << points.size() << " - " << " - " << C.size() << std::endl;
+	double valor_otimo = NULL;
+	std::cout << points.size() << " = " << " - " << C.size() << std::endl;
 	
 	IloEnv env;
 
@@ -122,13 +122,46 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 
 		*/
 		
-		if (cplex.solve())
+		if (cplex.solve()) {
 			env.out() << "Valor Ótimo "
-			<< cplex.getObjValue() << endl;
+				<< cplex.getObjValue() << endl;
+
+			valor_otimo = cplex.getObjValue();
+		}
+		//std::cout << "================Tupla==============" << std::endl;
 
 		IloNumArray sol(env, n_tuplas);
 		cplex.getValues(sol, x);
+		
+		
+		for (int i = 0; i < n_tuplas; i++)
+		{
+			
 
+			if (sol[i] == 1) {
+				cout << "Tupla " << i << ", Disco: "<< tuplas[i].disco << ", Pos ("<< tuplas[i].pos.x << ", " << tuplas[i].pos.y << ")" << endl;
+
+				for (int j = 0; j < tuplas[i].points.size(); j++) {
+						cout << "Ponto: " << tuplas[i].points[j].id << endl;
+				}
+
+				/*
+				cout << "////////////////////////////////////////////////////" << endl;
+
+				for (int j = 0; j < points.size(); j++) {
+					
+					for (int id = 0; id < C[j].size(); id++) {
+						if (C[j][id] == i) {
+							cout << "Ponto: " << j << endl;
+						}
+					}
+					
+				}
+				*/
+				
+			}
+		}
+		
 		/*
 		for (int i = 0; i < n_ant; i++)
 		{
@@ -166,5 +199,5 @@ static void Exato(vector <Point> points, vector <Disco> discos, vector <Tupla> t
 
 	env.end();
 	
-	//return 0;
+	return valor_otimo;
 }
